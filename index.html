@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Atypical Canada</title><link rel="canonical" href="/es/"><noscript><meta http-equiv="refresh" content="0; url=/es/"></noscript><script>
+      (function () {
+        // Prioridad: preferencia guardada > idioma del navegador (ca*) > español.
+        let saved = null;
+        try {
+          saved = localStorage.getItem('atypical-lang');
+        } catch {
+          saved = null;
+        }
+        const langs = navigator.languages || [navigator.language || 'es'];
+        const prefersCa = langs.some(function (l) {
+          return l && l.toLowerCase().indexOf('ca') === 0;
+        });
+        const locale = saved === 'es' || saved === 'ca' ? saved : prefersCa ? 'ca' : 'es';
+        location.replace('/' + locale + '/');
+      })();
+    </script><script type="module" src="/_astro/page.DGRhADao.js"></script></head> <body> <a href="/es/">Continuar en español</a> </body></html>
